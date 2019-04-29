@@ -6,7 +6,7 @@ import "./App.css"
 
 class App extends Component {
 
-  constructor (props) {
+  constructor(props) {
 
     super(props)
 
@@ -21,19 +21,19 @@ class App extends Component {
       alreadyClicked: []
 
     }
-    
+
   }
 
-  
 
-  handleImgClick = (id, clicked) => { 
+
+  handleImgClick = (id, clicked) => {
 
     // changes boolean of img from false to true after click
     const newArray = this.state.images.map(image => {
-  
+
       return image
     });
-    
+
 
 
     // if clicked and img = false adds 1 to state then moves images around
@@ -49,18 +49,21 @@ class App extends Component {
         images: newArray,
 
         alreadyClicked: [...this.state.alreadyClicked, id]
-  
+
       });
     }
 
     console.log(this.state.alreadyClicked);
 
-    
+    if (this.state.currentScore > this.state.highScore) {
+      this.setState({ highScore: this.state.currentScore });
+    }
+
   }
 
-  random = (arr)  => {
+  random = (arr) => {
 
-    return (arr.sort(function(a, b) {return 0.5 - Math.random()}));
+    return (arr.sort(function (a, b) { return 0.5 - Math.random() }));
   }
 
 
@@ -69,25 +72,25 @@ class App extends Component {
     return (
       <div className="App">
 
-        <NavBar highScore = {this.state.highScore} currentScore = {this.state.currentScore} />
+        <NavBar highScore={this.state.highScore} currentScore={this.state.currentScore} />
 
         <div className="characterDiv">
-        
-        {this.random(this.state.images).map(image => (
-          <Cards  
-          key={image.id}
 
-          id={image.id}
+          {this.random(this.state.images).map(image => (
+            <Cards
+              key={image.id}
 
-          image={image.img}
+              id={image.id}
 
-          clicked={image.clicked}
+              image={image.img}
 
-          handleClick = {this.handleImgClick}
-          
-          />
+              clicked={image.clicked}
 
-        ))}
+              handleClick={this.handleImgClick}
+
+            />
+
+          ))}
 
         </div>
 
