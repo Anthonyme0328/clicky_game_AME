@@ -3,7 +3,7 @@
 **CLICKY_BJJ**
 
   How to Play
-
+  
   - load the page
   - click the image
   - the images are shuffled around
