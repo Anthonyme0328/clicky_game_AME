@@ -38,8 +38,8 @@ class App extends Component {
 
     // if clicked and img = false adds 1 to state then moves images around
     if (this.state.alreadyClicked.includes(id)) {
-      alert("You already clicked that one, press OK to restart")
-
+      alert("you've clicked that already try again")
+      this.setState({ currentScore: 0, alreadyClicked: []});
     } else {
 
       this.setState({

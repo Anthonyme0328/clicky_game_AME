@@ -3,7 +3,7 @@
 **CLICKY_BJJ**
 
   How to Play
-  
+
   - load the page
   - click the image
   - the images are shuffled around
@@ -28,7 +28,5 @@ Run **npm start** to run locally on your own computer
 
 **Bug Fixes/ Future Dev**
 
-  - Does not save you highest score when you lose a game
-  - game does not want to reset when a lose is triggered
   - needs to be 4x4 images on grid system
   - backgorund styling can be improved upon
