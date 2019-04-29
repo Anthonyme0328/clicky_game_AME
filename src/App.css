@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+}
+
+.characterDiv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+
